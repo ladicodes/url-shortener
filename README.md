@@ -19,35 +19,24 @@ Utilities: Random string generation for unique short IDs
 
 🚀 Getting Started
 
-Clone the repository and run locally:
+Clone the repository and run locally 👇
 
-git clone <repo-url>
-
+git clone https://github.com/<your-username>/url-shortener.git
 cd url-shortener
-
 python -m venv venv
-
-venv\Scripts\activate  # Windows
-
-# or: source venv/bin/activate  # Mac/Linux
-
+venv\Scripts\activate   # For Windows
+# source venv/bin/activate   # For Mac/Linux
 pip install -r requirements.txt
-
 python manage.py migrate
-
 python manage.py runserver
 
 
-Visit http://127.0.0.1:8000/
-
- to start shortening URLs instantly.
+Then open your browser and visit:
+👉 http://127.0.0.1:8000/
 
 💡 Features
 
-Generate short links automatically
-
-Redirect users seamlessly to original URLs
-
-Track link clicks in real time
-
-Store and view shortened links in a simple dashboard
+✅ Generate short links automatically
+✅ Redirect users seamlessly to original URLs
+✅ Track link clicks in real time
+✅ View all shortened links in a simple dashboard
