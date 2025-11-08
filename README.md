@@ -26,16 +26,33 @@ Fast, simple, and a great way to learn backend logic and database handling with 
 Clone this repository and set it up locally 👇  
 
 ```bash
-git clone https://github.com/<your-username>/url-shortener.git
+git clone https://github.com/ladicodes/url-shortener.git
 ```
 ```bash
 cd url-shortener
 ```
+```bash
 python -m venv venv
-venv\Scripts\activate     # For Windows
-# source venv/bin/activate   # For Mac/Linux
+```
+For Windows
+```bash
+venv\Scripts\activate
+```
+For Mac/Linux
+```bash
+source venv/bin/activate
+```
+Remaining commands
+```bash
 pip install -r requirements.txt
+```
+
+```bash
 python manage.py migrate
+```
+
+```bash
 python manage.py runserver
+```
 
 Now visit 👉 http://127.0.0.1:8000/ to try it out!
