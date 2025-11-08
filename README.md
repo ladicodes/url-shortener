@@ -27,7 +27,10 @@ Clone this repository and set it up locally 👇
 
 ```bash
 git clone https://github.com/<your-username>/url-shortener.git
+```
+```bash
 cd url-shortener
+```
 python -m venv venv
 venv\Scripts\activate     # For Windows
 # source venv/bin/activate   # For Mac/Linux
