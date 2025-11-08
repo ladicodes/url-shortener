@@ -10,7 +10,7 @@ def home(request):
         url = URL.objects.create(original_url=original_url, short_id=short_id)
         short_url = request.build_absolute_uri('/') + short_id
     urls = URL.objects.all()  
-    return render(request, 'home.html', {'short_url': short_url, 'urls': urls})
+    return render(request, 'shortener/home.html', {'short_url': short_url, 'urls': urls})
 
 # Redirect view with click tracking
 def redirect_short_url(request, short_id):
