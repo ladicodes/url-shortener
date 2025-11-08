@@ -22,16 +22,24 @@ Utilities: Random string generation for unique short IDs
 Clone the repository and run locally 👇
 
 git clone https://github.com/<your-username>/url-shortener.git
+
 cd url-shortener
+
 python -m venv venv
+
 venv\Scripts\activate   # For Windows
+
 # source venv/bin/activate   # For Mac/Linux
+
 pip install -r requirements.txt
+
 python manage.py migrate
+
 python manage.py runserver
 
 
 Then open your browser and visit:
+
 👉 http://127.0.0.1:8000/
 
 💡 Features
