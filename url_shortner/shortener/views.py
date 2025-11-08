@@ -1,13 +1,20 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import URL
+import string, random
 
 def home(request):
+    short_url = None
     if request.method == 'POST':
-        long_url = request.POST.get('long_url')
-        url_obj, created = URL.objects.get_or_create(long_url=long_url)
-        return render(request, 'shortener/home.html', {'short_url': request.build_absolute_uri('/') + url_obj.short_code})
-    return render(request, 'shortener/home.html')
+        original_url = request.POST['original_url']
+        short_id = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+        url = URL.objects.create(original_url=original_url, short_id=short_id)
+        short_url = request.build_absolute_uri('/') + short_id
+    urls = URL.objects.all()  
+    return render(request, 'home.html', {'short_url': short_url, 'urls': urls})
 
-def redirect_url(request, short_code):
-    url_obj = get_object_or_404(URL, short_code=short_code)
-    return redirect(url_obj.long_url)
+# Redirect view with click tracking
+def redirect_short_url(request, short_id):
+    url = get_object_or_404(URL, short_id=short_id)
+    url.clicks += 1
+    url.save()
+    return redirect(url.original_url)
