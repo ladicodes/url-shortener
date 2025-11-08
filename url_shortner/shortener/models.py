@@ -13,3 +13,10 @@ class URL(models.Model):
 
     def __str__(self):
         return f"{self.short_code} -> {self.long_url}"
+class URL(models.Model):
+    original_url = models.URLField()
+    short_id = models.CharField(max_length=10, unique=True)
+    clicks = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.short_id} -> {self.original_url}"
